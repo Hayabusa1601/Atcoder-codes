@@ -18,14 +18,19 @@ ll char_to_ll(char c) { return (int)(c - '0'); }
 ll string_to_ll(string s) { return char_to_ll(atoi(s.c_str())); }
 bool is_prime(ll x){ if(x <= 1) return false; for(ll i = 2; sqrt(i) <= x; i++) if(x % i == 0) return false; return true; }
 
+int main(){
 
-int main() {
-    int n, k;
-    cin >> n >> k;
+    int n;
+    cin >> n;
+    string s;
+    cin >> s;
 
-    ll ans = (n - 2) / (k - 1) + 1;
+    if(s[n-1] == 'o') {
+        cout << "Yes" << endl;
+    } else  if(s[n-1] == 'x') {
+        cout << "No" << endl;
+    }
 
-    cout << ans << endl;
-    
     return 0;
+    
 }

@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#include <bits/stdc++.h>
 #define MOD 1e9 + 7
 #define PI 3.141592653589793238
 #define pb push_back
@@ -18,14 +19,23 @@ ll char_to_ll(char c) { return (int)(c - '0'); }
 ll string_to_ll(string s) { return char_to_ll(atoi(s.c_str())); }
 bool is_prime(ll x){ if(x <= 1) return false; for(ll i = 2; sqrt(i) <= x; i++) if(x % i == 0) return false; return true; }
 
-
-int main() {
-    int n, k;
-    cin >> n >> k;
-
-    ll ans = (n - 2) / (k - 1) + 1;
-
-    cout << ans << endl;
-    
-    return 0;
+int main (){
+     int N, S;
+  cin >> N >> S;
+  vector<int> A(N), P(N);
+  for (int i = 0; i < N; i++) {
+    cin >> A.at(i);
+  }
+  for (int i = 0; i < N; i++) {
+    cin >> P.at(i);
+  }
+  int co = 0;
+  for(int i = 0; i < N; i++){
+      for(int j = 0; j < N; j++){
+          if (A.at(i) + P.at(j) == S){
+            co++;
+          }
+      }
+  }
+  cout << co << endl;
 }

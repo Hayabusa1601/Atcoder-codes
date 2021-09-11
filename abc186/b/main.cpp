@@ -18,14 +18,32 @@ ll char_to_ll(char c) { return (int)(c - '0'); }
 ll string_to_ll(string s) { return char_to_ll(atoi(s.c_str())); }
 bool is_prime(ll x){ if(x <= 1) return false; for(ll i = 2; sqrt(i) <= x; i++) if(x % i == 0) return false; return true; }
 
+int main(){
+    int h,w;
+    cin >> h >> w;
 
-int main() {
-    int n, k;
-    cin >> n >> k;
+    int a[h][w];
+    int tmp=100;
+    FOR(i,0,h){
+        FOR(j,0,w){
+            cin >>  a[i][j];
+            if(tmp > a[i][j]){
+                tmp = a[i][j];
+            }
+    }
+    }
 
-    ll ans = (n - 2) / (k - 1) + 1;
+    int sum = 0;
+    FOR(i,0,h){
+        FOR(j,0,w){
+            if(tmp == a[i][j]){ continue;
+            }else{
+                sum += a[i][j] - tmp;
+            }
+        }
+    }
 
-    cout << ans << endl;
-    
+    cout << sum << endl;
+
     return 0;
 }
